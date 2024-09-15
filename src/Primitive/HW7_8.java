@@ -1,4 +1,5 @@
-import javax.swing.*;
+package Primitive;
+
 import java.util.Random;
 
 public class HW7_8 {

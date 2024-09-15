@@ -1,3 +1,5 @@
+package Condition;
+
 import java.util.Random;
 
 public class HW11_12 {

@@ -1,3 +1,5 @@
+package Condition;
+
 import java.util.Scanner;
 
 public class HW11_12_1 {
