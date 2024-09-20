@@ -9,19 +9,19 @@ public class HW_15_16_2 {
         }
         System.out.println("Последний символ в строке: " + text.charAt(symbolCount));
         if (text.endsWith("!!!")) {
-            System.out.println("Строка заканчивается на '!!!'.");
+            System.out.println("Строка заканчивается на '!!!'");
         } else {
-            System.out.println("Строка не заканчивается на '!!!'.");
+            System.out.println("Строка не заканчивается на '!!!'");
         }
         if (text.startsWith("I like")) {
-            System.out.println("Строка начинается с 'I like'.");
+            System.out.println("Строка начинается с 'I like'");
         } else {
-            System.out.println("Строка не начинается с 'I like'.");
+            System.out.println("Строка не начинается с 'I like'");
         }
         if (text.contains("Java")) {
-            System.out.println("Строка содержит подстроку 'Java'.");
+            System.out.println("Строка содержит подстроку 'Java'");
         } else {
-            System.out.println("Строка не содержит подстроку 'Java'.");
+            System.out.println("Строка не содержит подстроку 'Java'");
         }
         for (int i = 0; i < text.length(); i++) {
             for (int j = 0; j <= text.length(); j++) {
