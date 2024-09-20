@@ -14,8 +14,8 @@ public class HW_15_16 {
                 ++upperLetterCount;
             }
         }
-        System.out.println("Количество прописных букв: " + upperLetterCount);
-        System.out.println("Количество строчных букв: " + lowerLetterCount);
+        System.out.println("Количество прописных букв - " + upperLetterCount);
+        System.out.println("Количество строчных букв - " + lowerLetterCount);
         for (int j = 0; j < text.length(); j++) {
             if (Character.isDigit(text.charAt(j))) {
                 if (text.charAt(j) <= '4' && text.charAt(j) >= '0') {
@@ -25,7 +25,7 @@ public class HW_15_16 {
                 }
             }
         }
-        System.out.println("Количество цифр от 0 до 4: " + numberCount04);
-        System.out.println("Количество цифр от 5 до 9: " + numberCount59);
+        System.out.println("Количество цифр от 0 до 4 - " + numberCount04);
+        System.out.println("Количество цифр от 5 до 9 - " + numberCount59);
     }
 }

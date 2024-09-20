@@ -7,7 +7,7 @@ public class HW_15_16_2 {
         for (int i = 0; i < text.length(); i++) {
             symbolCount = i;
         }
-        System.out.println("Последний символ в строке: " + text.charAt(symbolCount));
+        System.out.println("Последний символ в строке: '" + text.charAt(symbolCount) + "'");
         if (text.endsWith("!!!")) {
             System.out.println("Строка заканчивается на '!!!'");
         } else {
