@@ -21,9 +21,9 @@ public class HW_15_16 {
                 }
             }
         }
-        System.out.println("Количество прописных букв - " + upperLetterCount);
-        System.out.println("Количество строчных букв - " + lowerLetterCount);
-        System.out.println("Количество цифр от 0 до 4 - " + numberCount04);
-        System.out.println("Количество цифр от 5 до 9 - " + numberCount59);
+        System.out.println("Количество прописных букв: " + upperLetterCount);
+        System.out.println("Количество строчных букв: " + lowerLetterCount);
+        System.out.println("Количество цифр от 0 до 4: " + numberCount04);
+        System.out.println("Количество цифр от 5 до 9: " + numberCount59);
     }
 }

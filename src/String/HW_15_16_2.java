@@ -24,7 +24,7 @@ public class HW_15_16_2 {
                 if (j >= i) {
                     String substring = text.substring(i, j);
                     if (substring.equalsIgnoreCase("Java")) {
-                        System.out.println("Позиция подстроки 'Java': " + i + ", " + j);
+                        System.out.println("Позиция подстроки 'Java': " + i + " - " + j);
                     }
                 }
             }
