@@ -3,11 +3,7 @@ package String;
 public class HW_15_16_2 {
     public static void main(String[] args) {
         String text = "I like Java!!!";
-        int symbolCount = 0;
-        for (int i = 0; i < text.length(); i++) {
-            symbolCount = i;
-        }
-        System.out.println("Последний символ в строке: '" + text.charAt(symbolCount) + "'");
+        System.out.println("Последний символ в строке: '" + text.charAt(text.length()-1) + "'");
         if (text.endsWith("!!!")) {
             System.out.println("Строка заканчивается на '!!!'");
         } else {

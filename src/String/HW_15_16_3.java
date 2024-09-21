@@ -7,8 +7,7 @@ public class HW_15_16_3 {
             String substring = text.substring(text.length()/2-1, text.length()/2+1);
             System.out.println(substring);
         } else {
-            System.out.println("Нечётное количество букв");
-
+            System.out.println("Нечётное количество букв.");
         }
     }
 }

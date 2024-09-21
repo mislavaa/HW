@@ -13,18 +13,16 @@ public class HW_15_16 {
             } else if (Character.isUpperCase(text.charAt(i))) {
                 ++upperLetterCount;
             }
-        }
-        System.out.println("Количество прописных букв - " + upperLetterCount);
-        System.out.println("Количество строчных букв - " + lowerLetterCount);
-        for (int j = 0; j < text.length(); j++) {
-            if (Character.isDigit(text.charAt(j))) {
-                if (text.charAt(j) <= '4' && text.charAt(j) >= '0') {
+            if (Character.isDigit(text.charAt(i))) {
+                if (text.charAt(i) <= '4' && text.charAt(i) >= '0') {
                     ++numberCount04;
-                } else if (text.charAt(j) <= '9' && text.charAt(j) >= '5') {
+                } else if (text.charAt(i) <= '9' && text.charAt(i) >= '5') {
                     ++numberCount59;
                 }
             }
         }
+        System.out.println("Количество прописных букв - " + upperLetterCount);
+        System.out.println("Количество строчных букв - " + lowerLetterCount);
         System.out.println("Количество цифр от 0 до 4 - " + numberCount04);
         System.out.println("Количество цифр от 5 до 9 - " + numberCount59);
     }
