@@ -23,7 +23,7 @@ public class HW_19_20 {
     static void findMinMax() {
         double[] arr = {3.5, 5.2, -1.4, 7.8, 2.2};
         double min = arr[0];
-        double max = 0;
+        double max = arr[0];
         for (int i = 0; i < arr.length; i++) {
             if (min > arr[i]) {
                 min = arr[i];
