@@ -3,7 +3,7 @@ package Methods;
 public class Methods {
     /**
      * Находит квадрат числа.
-     * @param number переменная типа int
+     * @param number число
      * @return квадрат числа
      */
     static int square(int number) {
@@ -26,20 +26,19 @@ public class Methods {
      * @return массив с самой короткой и самой длиной строками из исходного массива
      */
     static String[] cornerValuesArray(String... array) {
+        if (array.length == 0) {
+            return new String[]{"null", "null"};
+        }
         String min = array[0];
         String max = array[0];
-        String[] arrayWithMinMaxStrings = new String[2];
         for (int i = 0; i < array.length; i++) {
             if (array[i].length() < min.length()) {
                 min = array[i];
-            }
-            if (array[i].length() > max.length()) {
+            } else if (array[i].length() > max.length()) {
                 max = array[i];
             }
         }
-        arrayWithMinMaxStrings[0] = min;
-        arrayWithMinMaxStrings[1] = max;
-        return arrayWithMinMaxStrings;
+        return new String[]{min, max};
     }
 
     /**
@@ -47,18 +46,19 @@ public class Methods {
      * @param numberArray varargs с переменными типа int для поиска наименьшего и наибольшего числа
      * @return наименьшее и наибольшее число
      */
-    static String cornerValuesArray(int... numberArray) {
-        int min = numberArray[0];
-        int max = numberArray[0];
+    static int[] cornerValuesArray(int... numberArray) {
+        if (numberArray.length == 0) {
+            return new int[]{0, 0};
+        }
+        int[] cornerValue = new int[]{numberArray[0], numberArray[0]};
         for (int i = 0; i < numberArray.length; i++) {
-            if (numberArray[i] < min) {
-                min = numberArray[i];
-            }
-            if (numberArray[i] > max) {
-                max = numberArray[i];
+            if (numberArray[i] < cornerValue[0]) {
+                cornerValue[0] = numberArray[i];
+            } else if (numberArray[i] > cornerValue[1]) {
+                cornerValue[1] = numberArray[i];
             }
         }
-        return "Минимальное число: " + min + ", " + "максимальное число: " + max;
+        return cornerValue;
     }
 
     /**
@@ -66,17 +66,33 @@ public class Methods {
      * @param symbolArray varargs с переменными типа char для поиска самого маленького и самого большого символа
      * @return самый мальнький и самый большой символы
      */
-    static String cornerValuesArray(char... symbolArray) {
-        char min = symbolArray[0];
-        char max = symbolArray[0];
+    static char[] cornerValuesArray(char... symbolArray) {
+        if (symbolArray.length == 0) {
+            return new char[]{'0', ' ', '0'};
+        }
+        char[] cornerValue = new char[]{symbolArray[0], ' ', symbolArray[0]};
         for (int i = 0; i < symbolArray.length; i++) {
-            if (symbolArray[i] < min) {
-                min = symbolArray[i];
-            }
-            if (symbolArray[i] > max) {
-                max = symbolArray[i];
+            if (symbolArray[i] < cornerValue[0]) {
+                cornerValue[0] = symbolArray[i];
+            } else if (symbolArray[i] > cornerValue[2]) {
+                cornerValue[2] = symbolArray[i];
             }
         }
-        return "Самый маленький символ: " + "'" + min + "'" + ", " + "самый большой символ: " + "'" + max + "'";
+        return cornerValue;
+    }
+
+    /**
+     * Находит факториал числа.
+     * @param n число
+     * @return факториал числа
+     */
+    static int factorial(int n) {
+        if (n < 0) {
+            return n;
+        } else if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
     }
 }
