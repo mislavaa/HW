@@ -12,15 +12,23 @@ public class HW_21_22 {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите имя: ");
-        String firstName = sc.nextLine();
+        String name = sc.nextLine();
         System.out.print("Введите фамилию: ");
-        String secondName = sc.nextLine();
-        System.out.println(Methods.printFullName(firstName, secondName));
+        String surname = sc.nextLine();
+        System.out.println(Methods.printFullName(name, surname));
 
-        String[] arrayToCheck = {"value", "arrays", "str", "sc", "numbers"};
-        String[] arrayToCheck1 = {"git", "in", "string"};
-        System.out.println(Arrays.toString(Methods.cornerValuesArray(arrayToCheck)));
-        System.out.println(Arrays.toString(Methods.cornerValuesArray(arrayToCheck1)));
+        String[] searchMinMaxStringInArray = {"value", "arrays", "str", "sc", "numbers"};
+        System.out.println(Arrays.toString(Methods.cornerValuesArray(searchMinMaxStringInArray)));
+
+        char[] searchMinMaxSymbolInArray = {'v', '=', 's', 'c', 'n'};
+        System.out.println(Methods.cornerValuesArray(searchMinMaxSymbolInArray));
+
+        int[] searchMinMaxNumberInArray = {1, 2, 3, 4, -5, 16, -1000, 0, 23};
+        System.out.println(Methods.cornerValuesArray(searchMinMaxNumberInArray));
+
+        System.out.println(Methods.cornerValuesArray(2, 3, 16, 13, 23, 0));
+        System.out.println(Methods.cornerValuesArray('a', '-', '5', '！', '@'));
+        System.out.println(Arrays.toString(Methods.cornerValuesArray("java", "top", "arrays", "hello", "in")));
 
     }
 }
