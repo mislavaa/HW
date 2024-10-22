@@ -2,26 +2,23 @@ package OOP;
 
 public class Main {
     public static void main(String[] args) {
-        Author author1 = new Author();
-        author1.setAuthorName("Александр");
-        author1.setAuthorSurname("Пушкин");
-        System.out.println(author1.printAuthorFullName());
+        Author author1 = new Author("Александр", "Пушкин");
+        System.out.println(author1);
 
-        Author author2 = new Author();
-        author2.setAuthorName("Николай");
-        author2.setAuthorSurname("Гоголь");
-        System.out.println(author2.printAuthorFullName());
+        Author author2 = new Author("Николай", "Гоголь");
+        System.out.println(author2);
 
-        Book book1 = new Book();
-        book1.setAuthorFullName(author1);
-        book1.setBookTitle("Сказка о золотой рыбке");
-        book1.setBookPublicationYear(1952);
-        System.out.println(book1.printBookInformation());
+        Book book1 = new Book("Сказка о золотой рыбке", 1952, author1);
+        System.out.println(book1);
+        book1.setTitle("Сказка о царе Салтане");
+        book1.setPublicationYear(1980);
+        System.out.println(book1);
+        System.out.println("Вывод с помощью геттеров: " + book1.getTitle() + " " + book1.getPublicationYear() + " " + book1.getAuthorFullName());
 
-        Book book2 = new Book();
-        book2.setAuthorFullName(author2);
-        book2.setBookTitle("Шинель");
-        book2.setBookPublicationYear(2018);
-        System.out.println(book2.printBookInformation());
+        Book book2 = new Book("Шинель", 2018, author2);
+        System.out.println(book2);
+        book2.setAuthorFullName(new Author("Н.В.", "Гоголь"));
+        System.out.println(book2);
+        System.out.println("Вывод с помощью геттеров: " + book2.getTitle() + " " + book2.getPublicationYear() + " " + book2.getAuthorFullName());
     }
 }
