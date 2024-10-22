@@ -3,17 +3,26 @@ package OOP;
 import java.time.LocalDate;
 
 public class Book {
-    private String bookTitle;
-    private Integer bookPublicationYear;
+    private String title;
+    private Integer publicationYear;
     private Author authorFullName;
 
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
+    public Book() {
     }
 
-    public void setBookPublicationYear(Integer bookPublicationYear) {
-        if (bookPublicationYear <= LocalDate.now().getYear() && bookPublicationYear > 0) {
-            this.bookPublicationYear = bookPublicationYear;
+    public Book(String title, Integer publicationYear, Author fullName) {
+        this.title = title;
+        setPublicationYear(publicationYear);
+        this.authorFullName = fullName;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setPublicationYear(Integer publicationYear) {
+        if (publicationYear <= LocalDate.now().getYear() && publicationYear > 0) {
+            this.publicationYear = publicationYear;
         } else {
             System.out.println("Year out of range");
         }
@@ -23,19 +32,20 @@ public class Book {
         this.authorFullName = authorFullName;
     }
 
-    public String getBookTitle() {
-        return bookTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public Integer getBookPublicationYear() {
-        return bookPublicationYear;
+    public Integer getPublicationYear() {
+        return publicationYear;
     }
 
     public Author getAuthorFullName() {
         return authorFullName;
     }
 
-    public String printBookInformation() {
-        return "'" + bookTitle + "'" + " " + bookPublicationYear + " год " + authorFullName.printAuthorFullName();
+    @Override
+    public String toString() {
+        return "'" + title + "'" + " " + publicationYear + " год " + authorFullName;
     }
 }
