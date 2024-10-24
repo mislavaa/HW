@@ -1,26 +1,35 @@
 package OOP;
 
 public class Author {
-    private String authorName;
-    private String authorSurname;
+    private String name;
+    private String surname;
 
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
+    public Author() {
     }
 
-    public void setAuthorSurname(String authorSurname) {
-        this.authorSurname = authorSurname;
+    public Author(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
 
-    public String getAuthorName() {
-        return authorName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAuthorSurname() {
-        return authorSurname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public String printAuthorFullName() {
-        return authorName + " " + authorSurname;
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + surname;
     }
 }
