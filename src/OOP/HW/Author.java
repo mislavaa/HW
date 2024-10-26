@@ -1,4 +1,4 @@
-package OOP;
+package OOP.HW;
 
 public class Author {
     private String name;
