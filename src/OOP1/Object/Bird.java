@@ -1,6 +1,6 @@
 package OOP1.Object;
 
-public class Bird extends Animal {
+public final class Bird extends Animal {
     private boolean canFly;
 
     public Bird(String name, boolean canFly) {
