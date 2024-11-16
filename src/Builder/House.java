@@ -8,6 +8,18 @@ public class House {
     public House() {
     }
 
+    public void setFloorNumber(int floorNumber) {
+        this.floorNumber = floorNumber;
+    }
+
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    public void setHasGarage(boolean hasGarage) {
+        this.hasGarage = hasGarage;
+    }
+
     private House(Builder builder) {
         this.floorNumber = builder.floorNumber;
         this.roomNumber = builder.roomNumber;
