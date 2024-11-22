@@ -3,52 +3,51 @@ package Football.Player;
 import java.util.Random;
 
 public class Player {
+    private String name;
     private int stamina;
-    private static final int MAX_STAMINA = 10;
     private static final int MIN_STAMINA = 0;
-    private static int countPlayers = 0;
+    private static final int MAX_STAMINA = 10;
     Random rand = new Random();
 
-    private Player() {
+    public Player(String name) {
+        this.name = name;
         this.stamina = rand.nextInt(9, MAX_STAMINA + 1);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getStamina() {
         return stamina;
     }
 
-    public static Player addPlayer() {
-        if (countPlayers < 6) {
-            ++countPlayers;
-            System.out.println("Игрок вышел на поле, количество игроков на поле: " + countPlayers);
-            return new Player();
-        } else {
-            System.out.println("Игрок не сможет выйти на поле, нет свободных мест");
-            return null;
-        }
+    public void setStamina(int stamina) {
+        this.stamina = stamina;
     }
 
     public void run() {
-        if (countPlayers == 6) {
+        if (Game.playerCount == Game.MAX_COUNT) {
             --stamina;
             if (stamina <= MAX_STAMINA && stamina > MIN_STAMINA) {
-                System.out.println("Игрок побежал, выносливость: " + stamina);
+                System.out.println("Игрок " + name + " побежал, выносливость: " + stamina);
             } else if (stamina == MIN_STAMINA) {
-                System.out.println("Выносливость игрока: " + stamina + ", он уходит с поля, количество игроков на поле: "
-                        + --countPlayers);
-            } else if (stamina < MIN_STAMINA) {
-                System.out.println("Игрок уже ушёл с поля");
+                System.out.println("Выносливость игрока " + name + ": " + stamina + ", он уходит с поля, количество игроков на поле: "
+                        + --Game.playerCount);
+                Game.players.remove(this);
             }
-        } else if (countPlayers < 6) {
+        } else if (Game.playerCount < 6) {
             System.out.println("Игра не начнётся, пока на поле не выйдут все игроки");
         }
     }
 
-    public static void info() {
-        if (countPlayers < 6 && countPlayers >= 0) {
-            System.out.println("Команды неполные, на поле ещё есть " + (6 - countPlayers) + " свободных мест");
-        } else if (countPlayers >= 6) {
-            System.out.println("На поле нет свободных мест");
-        }
+    @Override
+    public String toString() {
+        return "name = '" + name + '\'' +
+                ", stamina=" + stamina;
     }
 }
