@@ -1,56 +1,61 @@
 package Football;
 
+import Football.Player.Game;
 import Football.Player.Player;
 
 public class Main {
     public static void main(String[] args) {
-        Player player1 = Player.addPlayer();
-        Player.info();
+        Game game = new Game();
 
-        Player player2 = Player.addPlayer();
+        game.addPlayer("Player 1");
+        game.addPlayer("Player 2");
+        game.addPlayer("Player 3");
 
-        Player player3 = Player.addPlayer();
-        if (player3 != null) {
-            player3.run();
-        }
+        System.out.println(game);
+        game.info();
 
-        Player player4 = Player.addPlayer();
+        game.addPlayer("Player 4");
+        game.addPlayer("Player 5");
+        System.out.println(game);
 
-        Player player5 = Player.addPlayer();
-        Player.info();
+        game.addPlayer("Player 6");
+        System.out.println(game);
 
-        Player player6 = Player.addPlayer();
+        game.addPlayer("Player 7");
+        System.out.println(game);
 
-        Player player7 = Player.addPlayer();
-        Player.info();
+        game.checkPlayer(new Player("player 1"));
+        game.checkPlayer(new Player("Player 7"));
 
-        if (player1 != null) {
-            player1.run();
-            player1.run();
-            player1.run();
-            player1.run();
-            player1.run();
-            player1.run();
-            player1.run();
-            player1.run();
-            player1.run();
-            player1.run();
-        }
-        if (player7 != null) {
-            player7.run();
-        }
+        game.info();
 
-        Player player8 = Player.addPlayer();
-        Player.info();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        game.getPlayers(5).run();
+        System.out.println(game);
 
-        if (player4 != null) {
-            player4.run();
-            player4.run();
-            player4.run();
-        }
+        game.addPlayer("Player 9");
+        System.out.println(game);
 
-        if (player1 != null) {
-            player1.run();
-        }
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+        System.out.println(game);
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+        game.getPlayers(0).run();
+
+        System.out.println(game);
     }
 }
