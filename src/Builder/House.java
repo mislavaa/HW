@@ -1,12 +1,11 @@
 package Builder;
 
+import java.util.Objects;
+
 public class House {
     private int floorNumber;
     private int roomNumber;
     private boolean hasGarage;
-
-    public House() {
-    }
 
     public void setFloorNumber(int floorNumber) {
         this.floorNumber = floorNumber;
@@ -33,6 +32,19 @@ public class House {
                 ", roomNumber = " + roomNumber +
                 ", hasGarage = " + hasGarage +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return floorNumber == house.floorNumber && roomNumber == house.roomNumber;  //&& hasGarage == house.hasGarage; // Проверка без одного поля
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(floorNumber, roomNumber/*, hasGarage*/);
     }
 
     public static class Builder {
