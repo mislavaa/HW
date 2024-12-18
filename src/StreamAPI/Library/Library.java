@@ -1,6 +1,7 @@
 package StreamAPI.Library;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Library {
     private Map<Integer, Book> books = new HashMap<>();
@@ -19,6 +20,24 @@ public class Library {
      */
     public void addBook(Book book) {
         this.books.put(book.getId(), book);
+    }
+
+    /**
+     * Разделяет книги на доступные и недоступные
+     * @return Map с ключом - доступность книг, значением - список книг
+     */
+    public Map<Boolean, List<Book>> partitionByIsAvailable() {
+        return books.values().stream()
+                .collect(Collectors.partitioningBy(Book::isAvailable));
+    }
+
+    /**
+     * Группирует книги по авторам
+     * @return Map, где ключ - автор, значение - список книг
+     */
+    public Map<String, List<Book>> groupByAuthors() {
+        return books.values().stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
     }
 
     /**
