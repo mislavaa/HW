@@ -40,5 +40,8 @@ public class Main {
 
         System.out.println("Сортировка книг по авторам - " + library.sortBook(Comparator.comparing(Book::getAuthor)));
         System.out.println("Сортировка книг по доступности - " + library.sortBook(Comparator.comparing(Book::isAvailable)));
+
+        System.out.println("Мапа, где ключ - автор: " + library.groupByAuthors());
+        System.out.println("Мапа, где ключ - isAvailable: " + library.partitionByIsAvailable());
     }
 }
